@@ -32,11 +32,10 @@
    y la portada se muestra fija. */
 (function () {
   var html = document.documentElement;
-  // Pantallas con portada fija: celular, tableta vertical, poca altura o «reducir movimiento».
+  // Pantallas con portada fija: celular acostado (poca altura) o «reducir movimiento».
+  // El celular vertical sí tiene portada animada, con fotos recortadas en vertical.
   // Es la única copia de esta lista: etr.js la lee de data-portada-fija.
-  var FIJA = '(max-width: 720px), (orientation: portrait) and (max-width: 1024px), ' +
-             '(orientation: portrait) and (pointer: coarse), ' +
-             '(orientation: landscape) and (pointer: coarse) and (max-height: 560px), ' +
+  var FIJA = '(orientation: landscape) and (pointer: coarse) and (max-height: 560px), ' +
              '(prefers-reduced-motion: reduce)';
   html.setAttribute('data-portada-fija', FIJA);
   html.classList.add('anim');
@@ -72,11 +71,12 @@
 
 <header class="hero" id="top">
   <div class="stage">
-    <!-- a: inicio del fundido · b: fin del tramo · z0→z1: zoom lento · fx/fy: punto hacia donde se acerca -->
-    <div class="frame f1" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-1-sendero.webp" data-a="0" data-b="0.26" data-z0="1" data-z1="1.10" style="--fx:50%;--fy:30%"></div>
-    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-2-mirador.webp" data-a="0.20" data-b="0.48" data-z0="1" data-z1="1.08" style="--fx:50%;--fy:35%"></div>
-    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-3-cumbre.webp" data-a="0.42" data-b="0.70" data-z0="1" data-z1="1.10" style="--fx:62%;--fy:32%"></div>
-    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-4-selva.webp" data-a="0.635" data-b="1" data-z0="1" data-z1="1.14" style="--fx:53%;--fy:72%"></div>
+    <!-- a: inicio del fundido · b: fin del tramo · z0→z1: zoom lento · fx/fy: punto hacia donde se acerca
+         src-movil: la misma foto recortada en vertical (más liviana) para pantallas verticales -->
+    <div class="frame f1" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-1-sendero.webp" data-src-movil="/etr-prototipo/static/img/hero-1-movil.webp" data-a="0" data-b="0.26" data-z0="1" data-z1="1.10" style="--fx:50%;--fy:30%"></div>
+    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-2-mirador.webp" data-src-movil="/etr-prototipo/static/img/hero-2-movil.webp" data-a="0.20" data-b="0.48" data-z0="1" data-z1="1.08" style="--fx:50%;--fy:35%"></div>
+    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-3-cumbre.webp" data-src-movil="/etr-prototipo/static/img/hero-3-movil.webp" data-a="0.42" data-b="0.70" data-z0="1" data-z1="1.10" style="--fx:62%;--fy:32%"></div>
+    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-4-selva.webp" data-src-movil="/etr-prototipo/static/img/hero-4-movil.webp" data-a="0.635" data-b="1" data-z0="1" data-z1="1.14" style="--fx:53%;--fy:72%"></div>
     <div class="fog" aria-hidden="true"></div>
     <div class="tint" aria-hidden="true"></div>
 
@@ -130,7 +130,7 @@
       <p class="bib-top">Pungu Trail · 06.12.2026</p>
       
       <p class="bib-num"><b id="cdD">61</b><span>días</span></p>
-      <p class="bib-time"><b id="cdH">11</b> h · <b id="cdM">35</b> min · <b id="cdS">00</b> s</p>
+      <p class="bib-time"><b id="cdH">11</b> h · <b id="cdM">05</b> min · <b id="cdS">11</b> s</p>
       
       <p class="bib-place">Pungalá · Chimborazo</p>
     </div>

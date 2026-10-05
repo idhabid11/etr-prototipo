@@ -130,8 +130,10 @@
     const FADE = 0.06;                       // cuánto scroll dura cada fundido
     const FOG = [0.58, 0.65, 0.672, 0.75];   // la neblina sube, cubre y se despeja
     const FOG_MAX = 0.8;                     // nunca tapa del todo: debajo se ve el cambio de mundo
+    // En pantallas verticales (celular, tableta de pie) se usa la foto recortada en vertical: pesa menos
+    const vertical = matchMedia('(orientation: portrait)').matches;
     const frames = [...stage.querySelectorAll('.frame')].map(el => ({
-      el, src: el.dataset.src, a: +el.dataset.a, b: +el.dataset.b,
+      el, src: (vertical && el.dataset.srcMovil) || el.dataset.src, a: +el.dataset.a, b: +el.dataset.b,
       z0: +el.dataset.z0, z1: +el.dataset.z1, ok: false, op: -1, sc: -1
     }));
     let lastFog = -1;
@@ -241,7 +243,7 @@
     }, () => apagarPortada())).observe(hero);
 
     /* carga de las fotos: la primera gana el ancho de banda, las demás llegan en orden.
-       Solo ocurre con portada animada; los celulares nunca las descargan. */
+       Solo ocurre con portada animada (con la portada fija no se descargan). */
     let fotosPedidas = false;
     function loadFrame(i){
       const f = frames[i];

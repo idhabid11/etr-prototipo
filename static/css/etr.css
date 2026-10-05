@@ -90,13 +90,13 @@ html:not(.anim) .nav{background:rgba(11,26,51,.95)}   /* sin etr.js nadie lo vue
 @media (max-width:720px){.ridge{height:60px;top:-59px}}
 
 /* ================= PORTADA (fotos con scroll) =================
-   Fija por defecto (celular, «reducir movimiento» y sin JavaScript). La versión animada solo existe
-   con .hero-animado en <html>: la pone el script del <head> de inicio.html en pantallas grandes
-   y la quita si etr.js no logra arrancar. */
+   Fija por defecto (celular acostado, «reducir movimiento» y sin JavaScript). La versión animada solo
+   existe con .hero-animado en <html>: la pone el script del <head> de inicio.html (también en el
+   celular vertical) y la quita si etr.js no logra arrancar. */
 .hero{position:relative;background:var(--noche)}
 .stage{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;background:var(--noche)}
 .hero-animado .hero{height:850vh}
-.hero-animado .stage{position:sticky;top:0;min-height:0}
+.hero-animado .stage{position:sticky;top:0;min-height:0;height:100vh;height:100dvh}  /* dvh: sigue la barra del navegador del celular */
 .frame{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform-origin:var(--fx,50%) var(--fy,50%);will-change:transform,opacity;backface-visibility:hidden}
 .stage .frame.f1{transition:opacity 1s var(--ease-out)}
 .stage:not(.loaded) .frame.f1{opacity:0 !important}
@@ -374,6 +374,17 @@ footer{background:var(--noche-3);color:var(--sobre-oscuro-2);padding:72px 0 40px
   .datos dd{margin-bottom:12px}
 }
 @media (max-height:560px){.cue,.alt{display:none}}
+/* Portada animada en pantallas angostas (celular vertical) */
+@media (max-width:720px){
+  .hero-animado .hero{height:700vh}       /* un recorrido un poco más corto que en la computadora */
+  .tint{background:linear-gradient(180deg,rgba(11,26,51,.55) 0%,rgba(11,26,51,.2) 30%,rgba(11,26,51,.3) 60%,rgba(11,26,51,.75) 100%)}
+  .alt{top:auto;bottom:26px;right:16px;transform:none;flex-direction:row;align-items:baseline;gap:8px}
+  .alt b{font-size:22px}
+  .alt .bar{display:none}
+  .cue{left:16px;bottom:28px}
+}
+/* Las fotos verticales ya vienen centradas en lo importante: el acercamiento va al centro */
+@media (orientation: portrait){.frame{transform-origin:50% var(--fy,50%)}}
 
 /* ================= ESTADOS DE EVENTO (vienen del panel) ================= */
 .st-abierto .dot,.st-abierto .dot::after{background:#4E8A1C !important}
