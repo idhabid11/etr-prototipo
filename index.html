@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETR · Escuela de Trail Running Riobamba</title>
+<meta name="description" content="Escuela de Trail Running Riobamba. Senderos, comunidad y montaña en Chimborazo. Pungu Trail: 6 de diciembre de 2026 en Pungalá.">
+<meta name="theme-color" content="#0B1A33">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ETR · Escuela de Trail Running Riobamba">
+<meta property="og:image" content="https://idhabid11.github.io/etr-prototipo/static/img/og-etr.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1A33'/%3E%3Cpath d='M4 23L11 13L14 17M9 23L15 15L19 20M13 23L20 9L28 23' fill='none' stroke='%239CCB3B' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/etr-prototipo/static/css/etr.css">
+<script>
+/* Menú del celular: se pliega detrás del botón «Menú» solo si menu.js arrancó.
+   Sin JavaScript (o si menu.js falla) los enlaces quedan a la vista. */
+(function (html) {
+  html.classList.add('menu-js');
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!html.classList.contains('menu-listo')) html.classList.remove('menu-js');
+  });
+})(document.documentElement);
+</script>
+
+<script>
+/* Arranque de la portada. Las animaciones solo esconden contenido si etr.js arranca bien:
+   si el script falla, está bloqueado o el navegador no usa JavaScript, todo queda visible
+   y la portada se muestra fija. */
+(function () {
+  var html = document.documentElement;
+  // Pantallas con portada fija: celular, tableta vertical, poca altura o «reducir movimiento».
+  // Es la única copia de esta lista: etr.js la lee de data-portada-fija.
+  var FIJA = '(max-width: 720px), (orientation: portrait) and (max-width: 1024px), ' +
+             '(orientation: portrait) and (pointer: coarse), ' +
+             '(orientation: landscape) and (pointer: coarse) and (max-height: 560px), ' +
+             '(prefers-reduced-motion: reduce)';
+  html.setAttribute('data-portada-fija', FIJA);
+  html.classList.add('anim');
+  if (!window.matchMedia(FIJA).matches) html.classList.add('hero-animado');
+  // etr.js pone «etr-listo» al terminar; si no llegó a hacerlo, se vuelve a la página sin animaciones
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!html.classList.contains('etr-listo')) html.classList.remove('anim', 'hero-animado');
+  });
+})();
+</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<nav class="nav " aria-label="Principal">
+  <div class="nav-in">
+    <a class="brand" href="/etr-prototipo/" aria-label="ETR, Escuela de Trail Running, inicio"><img src="/etr-prototipo/static/img/logo-etr.png" alt="" width="890" height="268"></a>
+    <ul id="menu">
+      <li><a href="/etr-prototipo/#eventos">Calendario</a></li>
+      <li><a href="/etr-prototipo/#escuela">La escuela</a></li>
+      <li><a href="/etr-prototipo/#como">Inscripciones</a></li>
+      <li><a href="/etr-prototipo/#preguntas">Preguntas</a></li>
+      <li class="only-small"><a href="/etr-prototipo/#inscripcion">Avísame</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-lima nav-mine" href="/etr-prototipo/#como">Mi inscripción</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero" id="top">
+  <div class="stage">
+    <!-- a: inicio del fundido · b: fin del tramo · z0→z1: zoom lento · fx/fy: punto hacia donde se acerca -->
+    <div class="frame f1" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-1-sendero.webp" data-a="0" data-b="0.26" data-z0="1" data-z1="1.10" style="--fx:50%;--fy:30%"></div>
+    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-2-mirador.webp" data-a="0.20" data-b="0.48" data-z0="1" data-z1="1.08" style="--fx:50%;--fy:35%"></div>
+    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-3-cumbre.webp" data-a="0.42" data-b="0.70" data-z0="1" data-z1="1.10" style="--fx:62%;--fy:32%"></div>
+    <div class="frame" aria-hidden="true" data-src="/etr-prototipo/static/img/hero-4-selva.webp" data-a="0.635" data-b="1" data-z0="1" data-z1="1.14" style="--fx:53%;--fy:72%"></div>
+    <div class="fog" aria-hidden="true"></div>
+    <div class="tint" aria-hidden="true"></div>
+
+    <div class="alt" aria-hidden="true"><span>tramo</span><b id="altName">Páramo</b><div class="bar"><i></i></div><span id="altNum">01 / 04</span></div>
+
+    <div class="band b1 fx-blur" data-a="0" data-b="0.17" style="--peak:.5">
+      <p class="kicker">Escuela de Trail Running · Riobamba</p>
+      <h1 class="t" data-split="stack">El páramo despierta temprano.</h1>
+    </div>
+    <div class="band b2 fx-depth" data-a="0.24" data-b="0.40" style="--peak:.58">
+      <p class="t" data-split="lines"><span class="line">Senderos de altura.</span> <span class="line">Volcanes de frente.</span> <span class="line">Gente que corre contigo.</span></p>
+    </div>
+    <div class="band b3 fx-blur" data-a="0.47" data-b="0.62" style="--peak:.64">
+      <h2 class="t" data-split="stack">Debajo de las nubes, otro mundo.</h2>
+    </div>
+    <div class="band b4 fx-words" data-a="0.74" data-b="0.86" style="--peak:.58">
+      <h2 class="t" data-split="words">¿Primera vez? Empieza corto.</h2>
+      <p class="sub">Caminar en las subidas también es trail.</p>
+    </div>
+    <div class="band b5 fx-settle" data-a="0.89" data-b="1" style="--peak:.6">
+      <p class="kicker">Pungu Trail · 6 de diciembre de 2026</p>
+      <h2 class="t" data-split="words">Tu próxima aventura tiene fecha.</h2>
+      <p class="sub">Pungalá, Chimborazo. Inscripciones próximamente.</p>
+      <div class="row">
+        <a class="btn btn-lima" href="#eventos">Ver calendario <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-linea" href="#escuela">Conoce la escuela</a>
+      </div>
+    </div>
+
+    <div class="cue" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 6l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baja y recorre</span></div>
+
+    <div class="hero-static">
+      <p class="kicker">Escuela de Trail Running · Riobamba</p>
+      <h1>Tu próxima aventura tiene fecha.</h1>
+      <p class="sub">Pungu Trail · 6 de diciembre de 2026 · Pungalá</p>
+      <a class="btn btn-lima" href="#eventos">Ver calendario <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="trail" aria-hidden="true"><svg><path class="ghost"/><path class="live"/><g class="wps"></g></svg></div>
+
+  <section class="eventos oscuro rv" id="eventos" data-pc="1">
+    <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="rf" d="M0 120L0 78L70 52L120 66L200 26L270 58L330 44L400 74L480 34L540 52L610 14L690 60L760 40L830 70L910 30L980 54L1050 20L1130 62L1200 42L1270 72L1350 36L1440 58L1440 120Z"/><path class="rl" d="M0 78L70 52L120 66L200 26L270 58L330 44L400 74L480 34L540 52L610 14L690 60L760 40L830 70L910 30L980 54L1050 20L1130 62L1200 42L1270 72L1350 36L1440 58" vector-effect="non-scaling-stroke"/></svg>
+
+    
+    
+    <div class="bib" role="region" aria-label="Cuenta regresiva a Pungu Trail" data-inicio="2026-12-06T00:00:00-05:00">
+      <span class="pin" aria-hidden="true"></span><span class="pin" aria-hidden="true"></span><span class="pin" aria-hidden="true"></span><span class="pin" aria-hidden="true"></span>
+      <p class="bib-top">Pungu Trail · 06.12.2026</p>
+      
+      <p class="bib-num"><b id="cdD">61</b><span>días</span></p>
+      <p class="bib-time"><b id="cdH">11</b> h · <b id="cdM">35</b> min · <b id="cdS">00</b> s</p>
+      
+      <p class="bib-place">Pungalá · Chimborazo</p>
+    </div>
+    
+
+    <div class="wrap">
+      <div class="ev-head">
+        <p class="pc r"><b>PC 1</b> Calendario 2026</p>
+        <h2 class="h2 r">Próximas carreras y salidas</h2>
+        <p class="lede r">Elige tu reto. Cada evento muestra fecha, lugar, distancias y si las inscripciones están abiertas.</p>
+      </div>
+      <div class="ev-grid">
+        
+        <article class="tk r st-proximamente">
+          <div class="tk-ph"><img src="/etr-prototipo/media/eventos/2026/pungu-trail.jpg" alt="Pungu Trail" loading="lazy" width="1100" height="619"><div class="tk-date"><b>06</b><span>Dic</span></div></div>
+          <div class="tk-body">
+            <h3>Pungu Trail</h3>
+            <p class="tk-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Pungalá, Chimborazo</p>
+            <div class="dist">
+              <span>Distancias por confirmar</span>
+            </div>
+            <p class="status"><span class="dot" aria-hidden="true"></span>Inscripciones próximamente</p>
+            <a class="btn btn-noche" href="/etr-prototipo/eventos/pungu-trail-2026/">Ver evento <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+        
+        <article class="tk soon r">
+          <div class="tk-ph"><img src="/etr-prototipo/static/img/act-bici.jpg" alt="" loading="lazy" width="760" height="950"><div class="tk-date"><b>--</b><span>Pronto</span></div></div>
+          <div class="tk-body">
+            <h3>Nuevo evento</h3>
+            <p class="tk-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Chimborazo</p>
+            <div class="dist"><span>Fecha por anunciar</span></div>
+            <p class="status gris"><span class="dot" aria-hidden="true"></span>Por anunciar</p>
+            <a class="btn btn-noche" href="#inscripcion">Avísame <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+        <article class="tk soon r">
+          <div class="tk-ph"><img src="/etr-prototipo/static/img/act-rapel.jpg" alt="" loading="lazy" width="760" height="950"><div class="tk-date"><b>--</b><span>Pronto</span></div></div>
+          <div class="tk-body">
+            <h3>Nuevo evento</h3>
+            <p class="tk-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Chimborazo</p>
+            <div class="dist"><span>Fecha por anunciar</span></div>
+            <p class="status gris"><span class="dot" aria-hidden="true"></span>Por anunciar</p>
+            <a class="btn btn-noche" href="#inscripcion">Avísame <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="evento claro rv" id="destacado" data-pc="2">
+    <div class="wrap evento-grid">
+      <div>
+        <p class="pc r"><b>PC 2</b> Evento destacado</p>
+        <h2 class="ev-title r">Pungu Trail</h2>
+        <p class="lema r">La puerta a la grandeza</p>
+        <div class="r">
+          <p class="estado st-proximamente"><span class="dot" aria-hidden="true"></span>Inscripciones próximamente</p>
+          <dl class="datos">
+            <dt>Fecha</dt><dd>6 de diciembre de 2026</dd>
+            <dt>Lugar</dt><dd>Pungalá, Chimborazo</dd>
+            
+            <dt>Modalidades</dt>
+            <dd class="pend">Por confirmar</dd>
+            <dt>Transporte</dt><dd class="pend">Por confirmar</dd>
+            
+          </dl>
+          <p class="evento-txt">Más que una carrera, una experiencia. Senderos de montaña, comunidad y naturaleza en el corazón de Chimborazo. Distancias, precios y transporte se publicarán al abrir las inscripciones.</p>
+          <a class="btn btn-noche" href="/etr-prototipo/eventos/pungu-trail-2026/">Ver el evento completo <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="climb r" id="climb">
+        <div class="climb-img" role="img" aria-label="Pungu Trail" style="background-image:url('/etr-prototipo/media/eventos/2026/pungu-trail.jpg')"></div>
+        <div class="climb-body">
+          <svg viewBox="0 0 400 140" aria-hidden="true">
+            <defs><linearGradient id="profFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9CCB3B"/><stop offset="1" stop-color="#9CCB3B" stop-opacity="0"/></linearGradient></defs>
+            <path class="prof-area" d="M12 128 L44 112 L72 116 L104 92 L136 98 L170 70 L196 78 L232 50 L262 58 L298 30 L326 38 L360 14 L392 22 L392 140 L12 140 Z"/>
+            <path class="prof-ghost" d="M12 128 L44 112 L72 116 L104 92 L136 98 L170 70 L196 78 L232 50 L262 58 L298 30 L326 38 L360 14 L392 22"/>
+            <path class="prof-live" id="profLive" d="M12 128 L44 112 L72 116 L104 92 L136 98 L170 70 L196 78 L232 50 L262 58 L298 30 L326 38 L360 14"/>
+            <polygon class="summit" points="360,2 366,12 354,12"/>
+            <circle class="runner-dot" id="runnerDot" cx="12" cy="128" r="7"/>
+          </svg>
+          <button class="btn hold" id="holdBtn" type="button" aria-describedby="holdHint"><span class="fill" aria-hidden="true"></span><span>Mantén presionado para subir</span></button>
+          <p class="hint" id="holdHint">Mantén presionado con el mouse, el dedo o la barra espaciadora.</p>
+          <p class="reveal" id="climbMsg" aria-live="polite">Llegaste a la cumbre. <em>El 6 de diciembre</em> lo haces en Pungalá.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="escuela oscuro rv" id="escuela" data-pc="3">
+    <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="rf" d="M0 120L0 64L80 36L150 58L230 22L300 54L370 40L450 70L520 28L600 50L680 12L750 56L830 34L900 66L980 26L1060 48L1130 18L1210 58L1290 38L1370 68L1440 44L1440 120Z"/><path class="rl" d="M0 64L80 36L150 58L230 22L300 54L370 40L450 70L520 28L600 50L680 12L750 56L830 34L900 66L980 26L1060 48L1130 18L1210 58L1290 38L1370 68L1440 44" vector-effect="non-scaling-stroke"/></svg>
+    <div class="wrap">
+      <div class="esc-head">
+        <div>
+          <p class="pc r"><b>PC 3</b> La escuela</p>
+          <h2 class="h2 r">Corremos la montaña juntos</h2>
+        </div>
+        <p class="lede r">Somos la Escuela de Trail Running Riobamba. Organizamos salidas, carreras y entrenamientos en Chimborazo para que más personas descubran la montaña corriendo, a su ritmo y en grupo.</p>
+      </div>
+      <div class="act-grid">
+        <article class="card r"><div class="ph"><img src="/etr-prototipo/static/img/act-trail.jpg" alt="Corredor de trail en un sendero de páramo, imagen generada con IA" loading="lazy" width="760" height="950"></div><div class="tx"><span class="num">01</span><h3>Trail running</h3><p>Senderos de páramo y montaña, desde distancias cortas hasta rutas largas.</p></div></article>
+        <article class="card r"><div class="ph"><img src="/etr-prototipo/static/img/act-bici.jpg" alt="Ciclista de montaña en un camino de tierra, imagen generada con IA" loading="lazy" width="760" height="950"></div><div class="tx"><span class="num">02</span><h3>Ciclismo de montaña</h3><p>Rutas en bici por caminos de tierra y comunidades de Chimborazo.</p></div></article>
+        <article class="card r"><div class="ph"><img src="/etr-prototipo/static/img/act-rapel.jpg" alt="Descenso en rápel junto a una cascada, imagen generada con IA" loading="lazy" width="760" height="950"></div><div class="tx"><span class="num">03</span><h3>Rápel</h3><p>Descensos con cuerda, guiados y con equipo de seguridad.</p></div></article>
+        <article class="card r"><div class="ph"><img src="/etr-prototipo/static/img/act-escalada.jpg" alt="Escalada en roca en la montaña, imagen generada con IA" loading="lazy" width="760" height="950"></div><div class="tx"><span class="num">04</span><h3>Escalada</h3><p>Roca y montaña para quienes quieren subir un poco más.</p></div></article>
+      </div>
+      <a class="ig r" href="#contacto">Síguenos en Instagram <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="comunidad oscuro rv" data-pc="4">
+    <div class="com-in">
+      <div class="bg" role="img" aria-label="Grupo de corredores en un sendero de páramo, imagen generada con IA"></div>
+      <div class="com-copy">
+        <p class="kick r">Comunidad</p>
+        <h2 class="h2 r">Nadie sube solo</h2>
+        <p class="r">Salimos en grupo, nos esperamos en las subidas y celebramos cada llegada. Si es tu primera vez, te acompañamos desde el primer kilómetro.</p>
+        <a class="btn btn-lima r" href="#inscripcion">Quiero sumarme <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="como claro rv" id="como" data-pc="5">
+    <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="rf" d="M0 120L0 70L90 44L160 64L240 30L320 60L390 46L470 76L540 38L620 58L700 20L780 62L850 44L930 72L1000 32L1080 56L1160 26L1240 64L1320 42L1440 66L1440 120Z"/><path class="rl" d="M0 70L90 44L160 64L240 30L320 60L390 46L470 76L540 38L620 58L700 20L780 62L850 44L930 72L1000 32L1080 56L1160 26L1240 64L1320 42L1440 66" vector-effect="non-scaling-stroke"/></svg>
+    <div class="wrap">
+      <p class="pc r"><b>PC 4</b> Inscripciones</p>
+      <h2 class="h2 r">Cuatro pasos, sin enredos</h2>
+      <p class="lede r">Todo pasa dentro de esta web. Sabrás en cada momento en qué estado está tu inscripción.</p>
+      <ol class="steps r">
+        <li><h3>Elige tu modalidad</h3><p>Ves el precio y lo que incluye antes de llenar tus datos.</p></li>
+        <li><h3>Completa tus datos</h3><p>Solo lo necesario para el evento.</p></li>
+        <li><h3>Transfiere y sube tu comprobante</h3><p>Te mostramos la cuenta autorizada y el monto exacto.</p></li>
+        <li><h3>Revisamos y confirmamos</h3><p>Comprobamos tu pago en el banco y te avisamos.</p></li>
+      </ol>
+      <div class="estados r" aria-label="Estados de una inscripción">
+        <span class="chip">Recibido</span><span class="sep" aria-hidden="true">→</span>
+        <span class="chip">En revisión</span><span class="sep" aria-hidden="true">→</span>
+        <span class="chip ok">Confirmado</span>
+      </div>
+      <p class="nota r">Subir el comprobante no es lo mismo que estar inscrito. Tu cupo queda confirmado cuando revisamos el pago.</p>
+    </div>
+  </section>
+
+  <section class="faq claro rv" id="preguntas" data-pc="6" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="pc r"><b>PC 5</b> Preguntas frecuentes</p>
+        <h2 class="h2 r">Lo que todos preguntan antes de correr</h2>
+      </div>
+      <div class="r">
+        <details><summary>¿Puedo participar si nunca he corrido en montaña? <span class="pm" aria-hidden="true">+</span></summary><p>Sí. Elige la distancia más corta y ve a tu ritmo. En el trail es normal caminar en las subidas.</p></details>
+        <details><summary>¿Qué incluye el precio? <span class="pm" aria-hidden="true">+</span></summary><p>Cada modalidad muestra lo que incluye antes de inscribirte. Lo verás en la página de cada evento.</p></details>
+        <details><summary>¿Hay transporte? <span class="pm" aria-hidden="true">+</span></summary><p>Cuando un evento tenga bus, lo verás como opción al elegir tu modalidad, con sus plazas disponibles.</p></details>
+        <details><summary>¿Cuándo queda confirmada mi inscripción? <span class="pm" aria-hidden="true">+</span></summary><p>Cuando revisamos tu transferencia en el banco. Mientras tanto, tu inscripción aparece como «En revisión».</p></details>
+        <details><summary>¿Cuánto tiempo tengo para pagar? <span class="pm" aria-hidden="true">+</span></summary><p>Al inscribirte verás el plazo de tu reserva. Si vence, revisa la disponibilidad antes de transferir.</p></details>
+        <details><summary>¿Desde qué edad puedo participar? <span class="pm" aria-hidden="true">+</span></summary><p>Lo confirmaremos con las reglas de cada evento.</p></details>
+        <details><summary>¿Cómo contacto a la escuela? <span class="pm" aria-hidden="true">+</span></summary><p>Escríbenos por Instagram o por los datos de contacto al pie de esta página.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta oscuro rv" id="inscripcion" data-pc="meta">
+    <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="rf" d="M0 120L0 78L70 52L120 66L200 26L270 58L330 44L400 74L480 34L540 52L610 14L690 60L760 40L830 70L910 30L980 54L1050 20L1130 62L1200 42L1270 72L1350 36L1440 58L1440 120Z"/><path class="rl" d="M0 78L70 52L120 66L200 26L270 58L330 44L400 74L480 34L540 52L610 14L690 60L760 40L830 70L910 30L980 54L1050 20L1130 62L1200 42L1270 72L1350 36L1440 58" vector-effect="non-scaling-stroke"/></svg>
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="wrap cta-grid">
+      <div>
+        <p class="pc r"><b>Meta</b> Avísame</p>
+        <h2 class="h2 r">Inscripciones <em>muy pronto</em></h2>
+        <p class="lede r">Déjanos tu correo y te escribimos apenas se abran las inscripciones del Pungu Trail. Sin spam, solo este aviso.</p>
+      </div>
+      <div class="form r" id="formBox">
+        
+        <form id="avisoForm" method="post" novalidate>
+          <div class="f"><label for="fNombre">Nombre</label><input id="fNombre" type="text" placeholder="Tu nombre" autocomplete="given-name" required aria-describedby="eNombre"><p class="err" id="eNombre"></p></div>
+          <div class="f"><label for="fCorreo">Correo</label><input id="fCorreo" type="email" placeholder="tucorreo@ejemplo.com" autocomplete="email" required aria-describedby="eCorreo"><p class="err" id="eCorreo"></p></div>
+          <fieldset><legend>¿Te interesa el transporte?</legend><div class="opts"><label><input type="radio" name="bus" value="si"> Sí</label><label><input type="radio" name="bus" value="no"> No</label><label><input type="radio" name="bus" value="nose" checked> Aún no sé</label></div></fieldset>
+          <div class="f"><label class="check"><input id="fOk" type="checkbox" required aria-describedby="eOk"> Acepto que ETR use mis datos solo para avisarme sobre este evento.</label><p class="err" id="eOk"></p></div>
+          <button class="btn btn-lima" type="submit" disabled>Avísame <span class="arrow" aria-hidden="true">→</span></button>
+          <p class="proto">Prototipo: este formulario todavía no envía ni guarda datos.</p>
+        </form>
+        <div class="ok-msg" role="status" aria-live="polite" tabindex="-1"><h3>Listo<span id="okName"></span>.</h3><p>Esto es una demostración: tus datos no se enviaron ni se guardaron. Cuando abran las inscripciones lo anunciaremos en esta página.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer id="contacto">
+  <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="rf" d="M0 120L0 64L80 36L150 58L230 22L300 54L370 40L450 70L520 28L600 50L680 12L750 56L830 34L900 66L980 26L1060 48L1130 18L1210 58L1290 38L1370 68L1440 44L1440 120Z"/><path class="rl" d="M0 64L80 36L150 58L230 22L300 54L370 40L450 70L520 28L600 50L680 12L750 56L830 34L900 66L980 26L1060 48L1130 18L1210 58L1290 38L1370 68L1440 44" vector-effect="non-scaling-stroke"/></svg>
+  <div class="wrap">
+    <div class="foot">
+      <div><img src="/etr-prototipo/static/img/logo-etr.png" alt="ETR, Escuela de Trail Running" width="890" height="268" loading="lazy"><p style="margin:16px 0 0;max-width:34ch">Escuela de Trail Running Riobamba. Montaña, comunidad, naturaleza y aventura en Chimborazo.</p></div>
+      <div><h4>Contacto</h4><ul><li>Correo y teléfono por confirmar</li><li>Instagram por confirmar</li></ul></div>
+      <div><h4>Información</h4><ul><li>Privacidad (próximamente)</li><li>Condiciones de inscripción (próximamente)</li></ul></div>
+    </div>
+    <p class="disclaimer">Prototipo para validación con la Escuela de Trail Running Riobamba. Las imágenes de muestra fueron generadas con IA y se reemplazarán por fotografías reales de la escuela.</p>
+  </div>
+</footer>
+
+<script src="/etr-prototipo/static/js/menu.js"></script>
+<script src="/etr-prototipo/static/js/etr.js"></script>
+</body>
+</html>
