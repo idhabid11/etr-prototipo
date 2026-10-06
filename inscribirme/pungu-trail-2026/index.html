@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pungu Trail · Inscripción</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1A33'/%3E%3Cpath d='M4 23L11 13L14 17M9 23L15 15L19 20M13 23L20 9L28 23' fill='none' stroke='%239CCB3B' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/etr-prototipo/static/css/formulario.css">
+
+<style>:root{--gf:#3F7A12;--gf-fondo:#EAF3DC}</style>
+</head>
+<body>
+<main class="gf" id="main">
+  
+<p class="gf-aviso"><b>Ejemplo del formulario de inscripción.</b> Así lo verá la gente; en este prototipo todavía no se puede enviar.</p>
+
+<div class="gf-banner"><img src="/etr-prototipo/media/eventos/2026/pungu-trail.jpg" alt="" width="1600" height="700"></div>
+<section class="gf-tarjeta gf-titulo">
+  <h1>Pungu Trail</h1>
+  <p class="gf-sub">domingo 6 de diciembre de 2026 · Pungalá, Chimborazo</p>
+  
+    <div class="gf-desc">Pungu Trail · Pungalá · Chimborazo
+
+La puerta a la grandeza. Más que una carrera, una experiencia.
+
+Una ruta de trail running por senderos de montaña en el corazón de Chimborazo, cruzando el arco de piedra que es el símbolo del Pungu.
+
+⛰️ Montaña
+🤝 Comunidad
+🌿 Naturaleza
+🔥 Aventura
+
+Tu inscripción incluye:
+
+🚌 Transporte desde Riobamba o Ambato (si eliges esa opción)
+🏅 Medalla de finalista
+💧 Hidratación en la ruta
+📸 Fotografías del recorrido
+
+ Con transporte USD 23$
+ Sin transporte USD 15$
+
+-6 de diciembre de 2026
+-Salida desde Riobamba y Ambato
+
+⚠️ EJEMPLO: precios, horarios y lo que incluye son de muestra. La escuela los confirmará antes de abrir las inscripciones.</div>
+    
+  
+  
+  <p class="gf-nota-oblig">* Indica que la pregunta es obligatoria</p>
+</section>
+
+
+
+<section class="gf-tarjeta gf-imagen">
+  <h2>LA PUERTA A LA GRANDEZA</h2>
+  <img src="/etr-prototipo/media/eventos/formularios/2026/formulario-imagen_7Bxi0lA.webp" alt="LA PUERTA A LA GRANDEZA" loading="lazy">
+  
+</section>
+
+
+
+<form method="post" enctype="multipart/form-data" id="form-inscripcion" novalidate>
+  
+  <input type="hidden" name="versiones_condiciones" value="16,17,18,19,20" id="id_versiones_condiciones">
+  
+
+  
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-nombres">
+
+  <label class="gf-label" for="id_nombres">Nombres <span class="gf-ast" aria-hidden="true">*</span></label>
+  
+  <input type="text" name="nombres" placeholder="Tu respuesta" autocomplete="given-name" maxlength="80" required id="id_nombres">
+
+
+</div>
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-apellidos">
+
+  <label class="gf-label" for="id_apellidos">Apellidos <span class="gf-ast" aria-hidden="true">*</span></label>
+  
+  <input type="text" name="apellidos" placeholder="Tu respuesta" autocomplete="family-name" maxlength="80" required id="id_apellidos">
+
+
+</div>
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-tipo_documento">
+
+  <fieldset>
+    <legend class="gf-label">Tipo de documento <span class="gf-ast" aria-hidden="true">*</span></legend>
+    
+    <div class="gf-opciones">
+      <label class="gf-opcion" for="id_tipo_documento_0"><input type="radio" name="tipo_documento" value="cedula" id="id_tipo_documento_0" required checked><span>Cédula</span></label>
+      <label class="gf-opcion" for="id_tipo_documento_1"><input type="radio" name="tipo_documento" value="pasaporte" id="id_tipo_documento_1" required><span>Pasaporte</span></label>
+      
+    </div>
+  </fieldset>
+
+
+</div>
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-documento">
+
+  <label class="gf-label" for="id_documento">Número de documento <span class="gf-ast" aria-hidden="true">*</span></label>
+  <p class="gf-ayuda" id="id_documento_helptext">Cédula: 10 dígitos, sin guiones.</p>
+  <input type="text" name="documento" placeholder="Tu respuesta" inputmode="text" maxlength="20" required aria-describedby="id_documento_helptext" id="id_documento">
+
+
+</div>
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-fecha_nacimiento">
+
+  <label class="gf-label" for="id_fecha_nacimiento">Fecha de nacimiento <span class="gf-ast" aria-hidden="true">*</span></label>
+  
+  <input type="date" name="fecha_nacimiento" autocomplete="bday" required id="id_fecha_nacimiento">
+
+
+</div>
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-correo">
+
+  <label class="gf-label" for="id_correo">Correo electrónico <span class="gf-ast" aria-hidden="true">*</span></label>
+  <p class="gf-ayuda" id="id_correo_helptext">Aquí te llega la confirmación y tu enlace para seguir la inscripción.</p>
+  <input type="email" name="correo" placeholder="Tu respuesta" autocomplete="email" maxlength="320" required aria-describedby="id_correo_helptext" id="id_correo">
+
+
+</div>
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-telefono">
+
+  <label class="gf-label" for="id_telefono">Celular <span class="gf-ast" aria-hidden="true">*</span></label>
+  <p class="gf-ayuda" id="id_telefono_helptext">Por ejemplo: 0991234567</p>
+  <input type="tel" name="telefono" placeholder="Tu respuesta" autocomplete="tel" maxlength="20" required aria-describedby="id_telefono_helptext" id="id_telefono">
+
+
+</div>
+
+
+  
+<div class="gf-tarjeta gf-pregunta" id="pregunta-opcion">
+
+  <fieldset>
+    <legend class="gf-label">Inscripción <span class="gf-ast" aria-hidden="true">*</span></legend>
+    <p class="gf-ayuda" id="id_opcion_helptext">Bus de la escuela. Elige desde dónde sales (horarios de ejemplo).</p>
+    <div class="gf-opciones">
+      <label class="gf-opcion" for="id_opcion_0"><input type="radio" name="opcion" value="m4-p4" id="id_opcion_0" required><span>Inscripción con transporte desde Riobamba (05:30) · $23.00</span></label>
+      <label class="gf-opcion" for="id_opcion_1"><input type="radio" name="opcion" value="m4-p5" id="id_opcion_1" required><span>Inscripción con transporte desde Ambato (04:40) · $23.00</span></label>
+      <label class="gf-opcion" for="id_opcion_2"><input type="radio" name="opcion" value="m4" id="id_opcion_2" required><span>Inscripción sin transporte · $15.00</span></label>
+      
+    </div>
+  </fieldset>
+
+
+</div>
+
+  
+  
+
+  
+    
+    <section class="gf-tarjeta gf-seccion">
+      <h2>Contacto de emergencia</h2>
+      <p>Por si necesitamos avisar a alguien durante el evento.</p>
+    </section>
+    
+    
+      
+<div class="gf-tarjeta gf-pregunta" id="pregunta-p_10">
+
+  <label class="gf-label" for="id_p_10">Contacto de emergencia - Nombre y teléfono <span class="gf-ast" aria-hidden="true">*</span></label>
+  
+  <input type="text" name="p_10" placeholder="Tu respuesta" maxlength="200" required id="id_p_10">
+
+
+</div>
+
+    
+      
+
+<section class="gf-tarjeta gf-info">
+  <h2>UNA EXPERIENCIA INOLVIDABLE</h2>
+  <p>Al inscribirte recibirás información adicional. ¡CUPOS LIMITADOS!</p>
+</section>
+
+
+    
+  
+
+  
+  <section class="gf-tarjeta gf-seccion">
+    <h2>Términos y condiciones</h2>
+    <p>Léelos antes de marcar. Las casillas con * son obligatorias para inscribirte; las demás son autorizaciones opcionales.</p>
+  </section>
+  
+  <div class="gf-tarjeta gf-pregunta" id="pregunta-c_16">
+    <p class="gf-label">Condiciones de participación <span class="gf-ast" aria-hidden="true">*</span></p>
+    <div class="gf-legal" tabindex="0" role="region" aria-label="Texto de Condiciones de participación">[TEXTO PROPUESTO — PENDIENTE DE REVISIÓN LEGAL. Revísalo y ajústalo antes de publicar.]
+
+Declaro que estoy en condiciones físicas y de salud para participar en esta actividad de montaña, que conozco sus riesgos (terreno irregular, altura, clima cambiante) y que participo de forma voluntaria y bajo mi responsabilidad.
+Me comprometo a seguir las indicaciones de la organización, respetar la ruta señalada, cuidar el entorno natural y llevar el equipo obligatorio indicado en los requisitos del evento.</div>
+    <label class="gf-casilla" for="id_c_16"><input type="checkbox" name="c_16" required id="id_c_16"><span>Acepto: Condiciones de participación</span></label>
+    
+  </div>
+  
+  <div class="gf-tarjeta gf-pregunta" id="pregunta-c_17">
+    <p class="gf-label">Cancelación y devoluciones <span class="gf-ast" aria-hidden="true">*</span></p>
+    <div class="gf-legal" tabindex="0" role="region" aria-label="Texto de Cancelación y devoluciones">[TEXTO PROPUESTO — PENDIENTE DE REVISIÓN LEGAL. Revísalo y ajústalo antes de publicar.]
+
+Si cancelo mi inscripción, la devolución dependerá de la anticipación con que avise, según lo que publique la organización para este evento.
+Si la organización cancela el evento, se comunicará con las personas inscritas para coordinar la devolución o el cambio a otra fecha.
+Mi cupo queda confirmado solo cuando la organización revisa y aprueba mi pago.</div>
+    <label class="gf-casilla" for="id_c_17"><input type="checkbox" name="c_17" required id="id_c_17"><span>Acepto: Cancelación y devoluciones</span></label>
+    
+  </div>
+  
+  <div class="gf-tarjeta gf-pregunta" id="pregunta-c_18">
+    <p class="gf-label">Transporte <span class="gf-ast" aria-hidden="true">*</span></p>
+    <div class="gf-legal" tabindex="0" role="region" aria-label="Texto de Transporte">[TEXTO PROPUESTO — PENDIENTE DE REVISIÓN LEGAL. Revísalo y ajústalo antes de publicar.]
+
+Si elijo el transporte, debo estar en el punto de salida a la hora indicada; el bus no espera a quien llegue tarde. Los horarios pueden cambiar por razones de seguridad o clima.</div>
+    <label class="gf-casilla" for="id_c_18"><input type="checkbox" name="c_18" required id="id_c_18"><span>Acepto: Transporte</span></label>
+    
+  </div>
+  
+  <div class="gf-tarjeta gf-pregunta" id="pregunta-c_19">
+    <p class="gf-label">Tratamiento de datos personales <span class="gf-ast" aria-hidden="true">*</span></p>
+    <div class="gf-legal" tabindex="0" role="region" aria-label="Texto de Tratamiento de datos personales">[TEXTO PROPUESTO — PENDIENTE DE REVISIÓN LEGAL. Revísalo y ajústalo antes de publicar.]
+
+Autorizo a la Escuela de Trail Running Riobamba a usar los datos de este formulario solo para gestionar mi inscripción, mi seguridad durante el evento y comunicarme información de este evento.
+Mis datos no se venderán ni se compartirán con terceros, salvo lo necesario para la seguridad del evento (por ejemplo, servicios de emergencia). Puedo pedir que los corrijan o eliminen escribiendo a la escuela, conforme a la Ley Orgánica de Protección de Datos Personales del Ecuador.</div>
+    <label class="gf-casilla" for="id_c_19"><input type="checkbox" name="c_19" required id="id_c_19"><span>Acepto: Tratamiento de datos personales</span></label>
+    
+  </div>
+  
+  <div class="gf-tarjeta gf-pregunta" id="pregunta-c_20">
+    <p class="gf-label">Uso de fotografías y videos</p>
+    <div class="gf-legal" tabindex="0" role="region" aria-label="Texto de Uso de fotografías y videos">[TEXTO PROPUESTO — PENDIENTE DE REVISIÓN LEGAL. Revísalo y ajústalo antes de publicar.]
+
+Autorizo a la Escuela de Trail Running Riobamba a publicar fotografías y videos en los que aparezca durante el evento, en sus redes sociales y su página web, sin fines comerciales de terceros. Puedo retirar esta autorización cuando quiera.</div>
+    <label class="gf-casilla" for="id_c_20"><input type="checkbox" name="c_20" id="id_c_20"><span>Autorizo: Uso de fotografías y videos</span></label>
+    
+  </div>
+  
+  
+
+  <section class="gf-tarjeta gf-total" aria-live="polite">
+    <h2>Tu inscripción</h2>
+    <ul class="gf-lineas" id="lineas-total"><li class="vacio">Elige tu inscripción para ver el total.</li></ul>
+    <p class="gf-suma">Total <b id="valor-total">—</b></p>
+    <p class="gf-ayuda" style="margin:8px 0 0">En el siguiente paso revisas todo y confirmas.</p>
+  </section>
+
+  <div class="gf-acciones">
+    <div class="gf-acciones-izq">
+      <button class="gf-boton" type="submit" disabled>Siguiente</button>
+      <span class="gf-progreso"><span class="gf-barra"><i style="width:50%"></i></span>Página 1 de 2</span>
+    </div>
+    
+    <button class="gf-boton-texto" type="reset">Borrar formulario</button>
+    
+  </div>
+</form>
+
+
+  <footer class="gf-pie">
+    Formulario de la <a href="/etr-prototipo/">Escuela de Trail Running Riobamba</a> · <a href="/etr-prototipo/eventos/pungu-trail-2026/">Ver el evento</a><br>
+    Nunca te pediremos contraseñas en este formulario.
+  </footer>
+</main>
+
+<script id="precios-evento" type="application/json">{"opciones": {"m4-p4": {"precio": "23.00", "texto": "Inscripci\u00f3n con transporte desde Riobamba (05:30)"}, "m4-p5": {"precio": "23.00", "texto": "Inscripci\u00f3n con transporte desde Ambato (04:40)"}, "m4": {"precio": "15.00", "texto": "Inscripci\u00f3n sin transporte"}}, "servicios": {}}</script>
+<script src="/etr-prototipo/static/js/inscripcion.js"></script>
+
+</body>
+</html>

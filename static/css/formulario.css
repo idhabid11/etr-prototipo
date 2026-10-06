@@ -1,0 +1,125 @@
+/* ================= FORMULARIO DE INSCRIPCIÓN · estilo Google Forms =================
+   La escuela y sus corredores están acostumbrados a los formularios de Google: mismas tarjetas, mismo
+   ancho, mismos botones. El color del tema (--gf y --gf-fondo) lo elige la escuela en el panel. */
+:root{
+  --gf:#3F7A12; --gf-fondo:#EAF3DC;
+  --gf-texto:#202124; --gf-gris:#5F6368; --gf-linea:#DADCE0; --gf-rojo:#D93025; --gf-gris-fondo:#F8F9FA;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--gf-fondo);color:var(--gf-texto);font-family:Roboto,Arial,sans-serif;font-size:14px;line-height:1.5}
+a{color:var(--gf)}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--gf);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.gf{max-width:640px;margin:0 auto;padding:12px 12px 32px}
+
+/* Encabezado: imagen del evento + tarjeta del título */
+.gf-banner{border-radius:8px;overflow:hidden;margin-bottom:12px;background:#fff}
+.gf-banner img{display:block;width:100%;height:auto;aspect-ratio:16/7;object-fit:cover}
+.gf-tarjeta{background:#fff;border:1px solid var(--gf-linea);border-radius:8px;padding:24px;margin-bottom:12px;position:relative;overflow-wrap:anywhere}
+.gf-titulo{border-top:10px solid var(--gf);padding-top:22px}
+.gf-titulo h1{font-size:32px;line-height:40px;font-weight:400;margin:0 0 8px}
+.gf-sub{color:var(--gf-gris);margin:0 0 12px}
+.gf-desc{white-space:pre-line;font-size:14px;line-height:1.55;margin:0}
+.gf-nota-oblig{border-top:1px solid var(--gf-linea);margin:16px -24px 0;padding:14px 24px 0;color:var(--gf-rojo);font-size:14px}
+
+/* Secciones (como «Sección 2 de 3» en Google Forms) */
+.gf-seccion{border-top:10px solid var(--gf);padding:18px 24px}
+.gf-seccion h2{font-size:22px;line-height:28px;font-weight:400;margin:0}
+.gf-seccion p{margin:8px 0 0;white-space:pre-line}
+
+/* Preguntas */
+.gf-pregunta fieldset{border:0;margin:0;padding:0;min-width:0}
+.gf-label{display:block;font-size:16px;line-height:24px;font-weight:400;color:var(--gf-texto);margin:0 0 4px;padding:0;letter-spacing:.1px}
+.gf-ast{color:var(--gf-rojo)}
+.gf-ayuda{font-size:12px;line-height:1.5;color:var(--gf-gris);margin:0 0 12px;white-space:pre-line}
+.gf-pregunta input[type=text],.gf-pregunta input[type=email],.gf-pregunta input[type=tel],.gf-pregunta input[type=number],
+.gf-pregunta input[type=date],.gf-pregunta textarea{
+  display:block;width:50%;min-width:min(100%,280px);margin-top:12px;border:0;border-bottom:1px solid var(--gf-linea);border-radius:0;
+  background:transparent;font:inherit;font-size:14px;color:var(--gf-texto);padding:6px 0 7px;outline:none;transition:border-color .2s
+}
+.gf-pregunta textarea{width:100%;resize:vertical;min-height:30px}
+.gf-pregunta input:focus,.gf-pregunta textarea:focus{border-bottom:2px solid var(--gf);padding-bottom:6px}
+.gf-pregunta input::placeholder,.gf-pregunta textarea::placeholder{color:#70757A}
+.gf-pregunta select{margin-top:12px;min-width:min(100%,220px);height:48px;padding:0 12px;border:1px solid var(--gf-linea);border-radius:4px;background:#fff;font:inherit;font-size:14px;color:var(--gf-texto)}
+.gf-pregunta input[type=file]{margin-top:12px;font:inherit;max-width:100%}
+.gf-opciones{display:grid;gap:2px;margin-top:8px}
+.gf-opcion{display:flex;gap:12px;align-items:center;min-height:40px;padding:4px 0;cursor:pointer;font-size:14px;line-height:20px}
+.gf-opcion input{width:20px;height:20px;margin:0;flex:none;accent-color:var(--gf);cursor:pointer}
+.gf-opcion.agotada{color:var(--gf-gris);cursor:not-allowed}
+.gf-opcion.agotada span{text-decoration:line-through}
+.gf-casilla{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:14px;line-height:20px;margin-top:4px}
+.gf-casilla input{width:20px;height:20px;margin:0;flex:none;accent-color:var(--gf);cursor:pointer}
+
+/* Errores (como «Esta pregunta es obligatoria») */
+.gf-con-error{border-color:var(--gf-rojo)}
+.gf-con-error input[type=text],.gf-con-error input[type=email],.gf-con-error input[type=tel],.gf-con-error input[type=number],
+.gf-con-error input[type=date],.gf-con-error textarea{border-bottom-color:var(--gf-rojo)}
+.gf-error{display:flex;gap:8px;align-items:center;color:var(--gf-rojo);font-size:12px;margin:12px 0 0}
+.gf-error::before{content:"!";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--gf-rojo);color:#fff;font-weight:700;font-size:12px;flex:none}
+
+/* Elementos sin respuesta: título y descripción, imagen */
+.gf-info h2{font-size:20px;line-height:26px;font-weight:400;margin:0}
+.gf-info p{margin:8px 0 0;white-space:pre-line}
+.gf-imagen h2{font-size:16px;line-height:24px;font-weight:400;margin:0 0 12px}
+.gf-imagen img{display:block;width:100%;height:auto;border-radius:4px}
+.gf-imagen p{margin:12px 0 0;color:var(--gf-gris);font-size:12px;white-space:pre-line}
+
+/* Condiciones */
+.gf-legal{max-height:200px;overflow:auto;background:var(--gf-gris-fondo);border:1px solid var(--gf-linea);border-radius:4px;padding:10px 12px;font-size:13px;line-height:1.55;color:#3C4043;margin:8px 0 14px;white-space:pre-line}
+
+/* Total */
+.gf-total h2{font-size:16px;font-weight:500;margin:0 0 10px}
+.gf-lineas{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.gf-lineas li{display:flex;justify-content:space-between;gap:12px;padding-bottom:6px;border-bottom:1px solid #F1F3F4}
+.gf-lineas .vacio{color:var(--gf-gris);border:0}
+.gf-suma{display:flex;justify-content:space-between;align-items:baseline;margin:10px 0 0;font-size:16px;font-weight:500}
+.gf-suma b{font-size:24px;color:var(--gf)}
+
+/* Resumen (revisar y página de la inscripción) */
+.gf-resumen{display:grid;grid-template-columns:minmax(110px,38%) 1fr;gap:8px 16px;margin:0}
+.gf-resumen dt{color:var(--gf-gris)}
+.gf-resumen dd{margin:0;overflow-wrap:anywhere}
+.gf-lista{margin:0;padding-left:20px}
+.gf-codigo{font-family:'Roboto Mono',ui-monospace,monospace;font-size:28px;letter-spacing:.06em;margin:4px 0 12px;color:var(--gf-texto)}
+.gf-estados{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.gf-chip{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:14px;font-size:13px;font-weight:500;background:#E8EAED;color:var(--gf-texto)}
+.gf-chip.ok{background:#E6F4EA;color:#137333}
+.gf-chip.alerta{background:#FEF7E0;color:#8A5300}
+.gf-chip.mal{background:#FCE8E6;color:#B3261E}
+.gf-datos-pago{white-space:pre-line;background:var(--gf-gris-fondo);border:1px dashed var(--gf-gris);border-radius:4px;padding:12px;font-family:'Roboto Mono',ui-monospace,monospace;font-size:13px;margin:8px 0 12px}
+
+/* Avisos y mensajes */
+.gf-aviso{background:#FEF7E0;border:1px solid #F9E199;border-radius:8px;padding:12px 16px;margin-bottom:12px;color:#5C4400}
+.gf-aviso.mal{background:#FCE8E6;border-color:#F6AEA9;color:#8C1D18}
+.gf-aviso.ok{background:#E6F4EA;border-color:#A8DAB5;color:#0D652D}
+.gf-mensajes{display:grid;gap:8px;margin-bottom:12px}
+.gf-mensajes p{margin:0}
+
+/* Botones y pie */
+.gf-acciones{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:20px 0 8px}
+.gf-acciones-izq{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.gf-boton{display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 24px;border:0;border-radius:4px;background:var(--gf);color:#fff;font:500 14px/1 Roboto,Arial,sans-serif;letter-spacing:.25px;text-decoration:none;cursor:pointer;transition:box-shadow .2s}
+.gf-boton:hover{box-shadow:0 1px 2px rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}
+.gf-boton:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.gf-boton-sec{background:#fff;color:var(--gf);border:1px solid var(--gf-linea)}
+.gf-boton-texto{background:none;border:0;padding:8px;color:var(--gf);font:500 14px Roboto,Arial,sans-serif;cursor:pointer;border-radius:4px}
+.gf-boton-texto:hover{background:rgba(0,0,0,.04)}
+.gf-progreso{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--gf-gris)}
+.gf-barra{width:160px;height:10px;border-radius:5px;background:#fff;border:1px solid var(--gf-linea);overflow:hidden}
+.gf-barra i{display:block;height:100%;background:var(--gf)}
+.gf-pie{text-align:center;color:var(--gf-gris);font-size:12px;margin-top:20px;line-height:1.7}
+.gf-pie a{color:var(--gf-gris)}
+
+@media (max-width:640px){
+  .gf{padding:8px 8px 24px}
+  .gf-tarjeta{padding:20px 16px}
+  .gf-nota-oblig{margin:16px -16px 0;padding:14px 16px 0}
+  .gf-titulo h1{font-size:26px;line-height:34px}
+  .gf-pregunta input[type=text],.gf-pregunta input[type=email],.gf-pregunta input[type=tel],.gf-pregunta input[type=number],
+  .gf-pregunta input[type=date]{width:100%}
+  .gf-resumen{grid-template-columns:1fr;gap:0}
+  .gf-resumen dd{margin-bottom:10px}
+}

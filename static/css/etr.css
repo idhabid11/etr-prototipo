@@ -438,3 +438,16 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   *,*::before,*::after{animation:none !important;transition:none !important;transition-delay:0s !important}
   .anim .rv .r{opacity:1;transform:none}
 }
+
+/* Detalle del evento: categorías, extras, transporte, requisitos y galería */
+.det-h3{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:26px;margin:40px 0 10px}
+.det-p{color:var(--texto-2);margin:0 0 10px}
+.det-lista{margin:0;padding-left:20px;color:var(--texto-2);display:grid;gap:4px}
+.det-lista b{color:var(--texto)}
+.det-check{list-style:none;padding-left:0}
+.det-check li{padding-left:26px;position:relative}
+.det-check li::before{content:"";position:absolute;left:2px;top:.45em;width:12px;height:7px;border-left:3px solid #5E8A1C;border-bottom:3px solid #5E8A1C;transform:rotate(-45deg)}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:22px}
+.galeria img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.det-side .btn+.btn{margin-top:12px}
+span.btn[aria-disabled]{opacity:.6;cursor:not-allowed}
