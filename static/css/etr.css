@@ -260,7 +260,7 @@ section{position:relative;padding:clamp(96px,10vw,150px) 0}
 .escuela{--ridge:var(--noche)}
 .esc-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end}
 .esc-head .lede{margin:0}
-.act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px}
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
 .card{background:var(--blanco);color:var(--texto);display:flex;flex-direction:column;transition:transform .45s var(--ease-out)}
 .card:hover{transform:translateY(-6px)}
 .card .ph{aspect-ratio:4/5;overflow:hidden}
@@ -357,7 +357,7 @@ footer{background:var(--noche-3);color:var(--sobre-oscuro-2);padding:72px 0 40px
   .evento-grid,.faq-grid,.cta-grid,.esc-head{grid-template-columns:1fr}
   .faq-grid .h2{position:static}
   .ev-grid{grid-template-columns:1fr 1fr}
-  .act-grid{grid-template-columns:repeat(2,1fr)}
+  .act-grid{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(2,1fr);row-gap:40px}
   .foot{grid-template-columns:1fr 1fr}
   .bib{position:relative;top:auto;right:auto;margin:-40px auto 40px}
